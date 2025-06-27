@@ -13,7 +13,7 @@ const MovieDetails = () => {
     const [movie, setMovie] = useState (null);
 
     useEffect(()=>{
-        axios.get(`http://localhost:3001/movies/${id}`).then((resp)=> {
+        axios.get(`${import.meta.env.VITE_API_URL}/movies/${id}`).then((resp)=> {
             setMovie(resp.data.data)
         })
     }, [])

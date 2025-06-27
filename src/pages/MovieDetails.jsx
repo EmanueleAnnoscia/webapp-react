@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import ReviewCard from "../components/ReviewCard";
 
 const MovieDetails = () => {
     const{ id } = useParams();
+    const navigate = useNavigate();
 
     const [movie, setMovie] = useState (null);
 
@@ -12,6 +14,11 @@ const MovieDetails = () => {
             setMovie(resp.data.data)
         })
     }, [])
+
+    const goBack = (event) => {
+        event.preventDefault();
+        navigate(-1);
+    };
 
     return (
         <main>
@@ -22,7 +29,8 @@ const MovieDetails = () => {
             )}
             {movie && (
                 <>
-                <section className="container">
+                <section className="container py-4">
+                    <a className="btn btn-outline-warning" onClick={goBack} >Torna alla pagina precedente</a>
                     <h1 className="text-center my-4 ">{movie.title}</h1>
                     <h3 className="text-center my-3 ">{movie.director}</h3>
                     <div className="text-center mb-4">Voto: {movie.vote_avg}</div>
@@ -37,7 +45,13 @@ const MovieDetails = () => {
                             </div>
                         ) : (
                             <div className="row row-cols-1 g-3">
-                                
+                                {
+                                    movie.reviews.map(curReview => (
+                                        <div className="col" key={curReview.id}>
+                                            <ReviewCard review={curReview} />
+                                        </div>
+                                    ))}
+
                                 <div className="col"></div>
                             </div>
                         )

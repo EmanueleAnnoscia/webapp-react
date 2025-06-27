@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+
 const MovieCard = ({ movie }) => {
     const {id, title, director, genre, release_year, image, vote_avg, abstract} = movie;
 
     return (
         <div className="card" >
-            <img src={image || "https://placehold.co/294.4x429.55?text='Immagine non Disponibile'"} 
+            <img 
+            src={image || "https://placehold.co/294.4x429.55?text='Immagine non Disponibile'"} 
             className="card-img-top" 
             alt={`Immagine del film ${title}`} 
             />
@@ -13,7 +16,7 @@ const MovieCard = ({ movie }) => {
                     <h6 className="card-title">{genre}</h6>
                     <h6 className="card-title">{release_year}</h6>
                     <p className="card-text">{abstract}</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <Link to={`/movies/${id}`} className="btn btn-primary">Visualizza dettagli</Link>
                 </div>
         </div>
     );

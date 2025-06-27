@@ -1,6 +1,7 @@
+import Alert from "../Alert"
 import ReviewCard from "./ReviewCard";
 
-const ReviewList = () => {
+const ReviewList = ({reviews}) => {
     return (
         <>
             {
@@ -9,7 +10,7 @@ const ReviewList = () => {
                 ) : (
                     <div className="row row-cols-1 g-3">
                         {
-                            movie.reviews.map(curReview => (
+                            reviews.map(curReview => (
                                 <div className="col" key={curReview.id}>
                                     <ReviewCard review={curReview} />
                                 </div>

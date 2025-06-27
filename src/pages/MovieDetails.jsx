@@ -4,6 +4,7 @@ import axios from "axios";
 import ReviewCard from "../components/review_components/ReviewCard";
 import BackButton from "../components/BackButton";
 import ReviewList from "../components/review_components/ReviewList";
+import Stars from "../components/Stars";
 
 const MovieDetails = () => {
     const{ id } = useParams();
@@ -32,10 +33,12 @@ const MovieDetails = () => {
                     <BackButton />
                     <h1 className="text-center my-4 ">{movie.title}</h1>
                     <h3 className="text-center my-3 ">{movie.director}</h3>
-                    <div className="text-center mb-4">Voto: {movie.vote_avg}</div>
+                    <div className="text-center mb-4">Voto: {movie.vote_avg}
+                        <Stars vote={movie.vote_avg} />
+                    </div>
                     <p className="text-center">{movie.abstract}</p>
                 </section>
-                <section className="container">
+                <section className="container mb-5">
                     <h2>RECENSIONI</h2>
                    <ReviewList reviews={movie.reviews}/>
                 </section>

@@ -1,0 +1,19 @@
+const MovieCard = ({ movie }) => {
+    const {id, title, director, genre, release_year, image, vote_avg, abstract} = movie;
+
+    return (
+        <div className="card" >
+            <img src={image} className="card-img-top" alt={`Immagine del film ${title}`} />
+                <div className="card-body">
+                    <h5 className="card-title">{title}</h5>
+                    <h5 className="card-title">{director}</h5>
+                    <h6 className="card-title">{genre}</h6>
+                    <h6 className="card-title">{release_year}</h6>
+                    <p className="card-text">{abstract}</p>
+                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                </div>
+        </div>
+    );
+}
+
+export default MovieCard;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import ReviewCard from "../components/review_components/ReviewCard";
 import BackButton from "../components/BackButton";
@@ -7,15 +7,20 @@ import ReviewList from "../components/review_components/ReviewList";
 import Stars from "../components/Stars";
 
 const MovieDetails = () => {
-    const{ id } = useParams();
-    
+    const{ slug } = useParams();
+    const navigate = useNavigate()
 
     const [movie, setMovie] = useState (null);
 
     useEffect(()=>{
-        axios.get(`${import.meta.env.VITE_API_URL}/movies/${id}`).then((resp)=> {
+        axios.get(`${import.meta.env.VITE_API_URL}/movies/${slug}`).then((resp)=> {
             setMovie(resp.data.data)
         })
+        .catch((err) => {
+            if (err.status === 404){
+                navigate ("/not-found")
+            }
+        });
     }, [])
 
     

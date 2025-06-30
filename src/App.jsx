@@ -19,7 +19,7 @@ function App() {
           <Route element={<GuestLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/movies" element = {<Movies />}/>
-            <Route path="/movies/:id" element = {<MovieDetails />}/>
+            <Route path="/movies/:slug" element = {<MovieDetails />}/>
           </Route>
         </Routes>
       </BrowserRouter>

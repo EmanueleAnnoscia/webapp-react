@@ -18,3 +18,13 @@ MILESTONE 1
   - Implementare la ricerca libera che faccia riferimento al nome del film (coinvolge anche le modifiche in backend) 
   - Curare l’aspetto estetico della vostra applicazione, quindi gestire le immagini, gestire lo stato di ricerca vuota e altri aspetti di UX X
   - Implementare la pagina Show X
+
+
+  ### Esercizio 
+  Completare le milestone precedenti 
+  
+  MILESTONE 4 - In ultimo, effettuiamo una chiamata AJAX dalla pagina di dettaglio per ottenere il dettaglio di un singolo film, comprese le sue recensioniX 
+  Bonus
+- usare lo slug al posto di id per richiedere i dettagli di un libro X
+- implementare la pagina 404 not found in react X
+- implementare la paginazione (per quelli che vogliono una sfida in più)

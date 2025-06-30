@@ -4,7 +4,7 @@ const MovieCard = ({ movie }) => {
     const {id, title, director, genre, release_year, image, vote_avg, abstract} = movie;
 
     return (
-        <div className="card" >
+        <div className="card h-100" >
             <img 
             src={image || "https://placehold.co/294.4x429.55?text='Immagine non Disponibile'"} 
             className="card-img-top" 

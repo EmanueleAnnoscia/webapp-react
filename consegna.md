@@ -17,4 +17,4 @@ MILESTONE 1
   - Impostare la struttura del lavoro in maniera da sfruttare la riutailizzabilità dei componenti React e le loro props! X
   - Implementare la ricerca libera che faccia riferimento al nome del film (coinvolge anche le modifiche in backend) 
   - Curare l’aspetto estetico della vostra applicazione, quindi gestire le immagini, gestire lo stato di ricerca vuota e altri aspetti di UX X
-  - Implementare la pagina Show 
+  - Implementare la pagina Show X

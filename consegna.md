@@ -27,4 +27,15 @@ MILESTONE 1
   Bonus
 - usare lo slug al posto di id per richiedere i dettagli di un libro X
 - implementare la pagina 404 not found in react X
-- implementare la paginazione (per quelli che vogliono una sfida in più)
+- implementare la paginazione (per quelli che vogliono una sfida in più) 
+
+
+### Esercizio
+Miglioriamo l’esperienza dell’utente inserendo
+MILESTONE 1 (BACKEND)- 
+Predisponiamo un’API per **salvare nel database** una nuova recensione legata ad un film
+- Testiamola su postman e verifichiamo che nel DB venga effettivamente inserita una nuova recensioneMILESTONE 2 (FRONTEND)- Creiamo un componente che contenga il form per le recensioni
+- Inseriamo questo componente nella pagina di dettaglio del film
+- All’invio del form, la nuova recensione viene salvata sul database e visualizzata nella pagina, in fondo alle altre
+**BONUS**:
+- Inseriamo le validazioni sia lato backend che nel form di frontend

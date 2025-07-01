@@ -9,6 +9,10 @@ const AppHeader = () => {
         {
             title: "Movies",
             url: "/movies"
+        },
+        {
+            title: "Inserisci Film",
+            url: "/movies/create"
         }
     ];
 

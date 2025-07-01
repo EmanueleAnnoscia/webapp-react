@@ -5,11 +5,11 @@ import GuestLayout from "./layout/GuestLayout";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import MovieDetails from "./pages/MovieDetails";
-
+import NewFilm from "./pages/NewFilm"
 
 function App() {
 
- 
+
 
 
   return (
@@ -18,8 +18,11 @@ function App() {
         <Routes>
           <Route element={<GuestLayout />}>
             <Route path="/" element={<Home />} />
-            <Route path="/movies" element = {<Movies />}/>
-            <Route path="/movies/:slug" element = {<MovieDetails />}/>
+            <Route path="/movies">
+              <Route path="" element={<Movies />} />
+              <Route path=":slug" element={<MovieDetails />} />
+              <Route path="create" element={<NewFilm />}/>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
